@@ -3,10 +3,10 @@ import { PaperMove } from "./PaperMove"
 import { RockMove } from "./RockMove"
 import { ScissorsMove } from "./ScissorsMove"
 
-export const MatchContainer = ({playerMove}) => {
-
-    const [houseMove, setHouseMove] = useState(null)
+export const MatchContainer = ({playerMove, playerHistory, houseMove, matchResult}) => {
     
+    
+
     return <div className="container mx-auto mt-24 flex justify-around text-white">
         <div className="flex flex-col items-center justify-between">
             <h2 className="font-Barlow-Semi-Condensed font-[700] text-center text-2xl mb-10">YOU PICKED</h2>
@@ -19,6 +19,9 @@ export const MatchContainer = ({playerMove}) => {
             <RockMove></RockMove>
         }
         </div>
+        <div>
+            <h1 className="text-white text-3xl">{matchResult}</h1>
+        </div>
         <div className="flex flex-col items-center justify-between">
             <h2 className="font-Barlow-Semi-Condensed font-[700] text-center text-2xl mb-10">THE HOUSE PICKED</h2>
             {!houseMove? 
@@ -26,7 +29,14 @@ export const MatchContainer = ({playerMove}) => {
                 <div className="h-56 w-56 bg-black opacity-20 rounded-full"></div> 
             </div>
             : 
-            <></>}
+            (houseMove === 'rock'?
+            <RockMove></RockMove>
+            :
+            houseMove === 'paper'?
+            <PaperMove></PaperMove>
+            :
+            <ScissorsMove></ScissorsMove>)
+            }
         </div>
     </div>
 }
