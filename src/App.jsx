@@ -2,7 +2,6 @@ import {Header} from "./components/Header";
 import {useState} from "react";
 import {MovesContainer} from "./components/MovesContainer.jsx";
 import {RulesButton} from "./components/RulesButton.jsx";
-import {RulesModal} from "./components/RulesModal";
 
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
 
     return (
         <div className='App flex flex-col justify-between h-full items-center'>
-            <RulesModal/>
             <div className="flex flex-col items-center container">
                 <div className='mt-12 mb-20 grid place-items-center'>
                     <Header score={score}/>
