@@ -23,6 +23,10 @@ module.exports = {
         },
         fontFamily: {
             "Barlow-Semi-Condensed": ['"Barlow Semi Condensed"', 'sans-serif']
+        },
+        spacing: {
+            '34': '8.5rem',
+            '26': '6.5rem'
         }
     },
   },
