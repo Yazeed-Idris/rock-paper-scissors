@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
         colors: {
+            "White-Shadow": "#bbc0d5",
             "Dark": "hsl(229, 25%, 31%)",
             "Score": "hsl(229, 64%, 46%)",
             "Score-Number": "#565468",
