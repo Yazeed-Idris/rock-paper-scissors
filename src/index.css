@@ -7,12 +7,12 @@ html, body, #root {
 }
 
 body {
-    background-image: radial-gradient(ellipse at top,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-image: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
 
 .color-picker {
-    color: #c76c1c;
+    color: #cdced3;
 }
 
 
