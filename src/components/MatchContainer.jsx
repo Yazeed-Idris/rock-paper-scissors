@@ -1,13 +1,29 @@
-export const MatchContainer = ({userPick, housePick, matchResult, showHousePick = true}) => {
+import {useState} from "react";
+
+export const MatchContainer = ({userPick, housePick, matchResult}) => {
+
+    const [showHousePick, setShowHousePick] = useState(false)
+    const [showEmptyDiv, setShowEmptyDiv] = useState(true)
+
+    if (housePick) {
+        setTimeout(() => {
+            setShowEmptyDiv(false)
+        }, 2300)
+        setTimeout(() => {
+            setShowHousePick(true)
+        }, 2335)
+    }
+
+
     return <div className={`flex justify-around `}>
         <div>
-            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-24'>YOU PICKED</h1>
-            <div className='scale-150'>
-
+            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-12 sm:mb-24'>YOU
+                PICKED</h1>
+            <div className='scale-110'>
                 {userPick}
             </div>
         </div>
-        <div className='grid place-items-center'>
+        <div className=' place-items-center hidden sm:grid sm:mx-6'>
             <div>
                 {matchResult === 1 ?
                     <h1 className='text-center text-white text-4xl font-Barlow-Semi-Condensed font-[700] tracking-widest'>YOU
@@ -25,11 +41,23 @@ export const MatchContainer = ({userPick, housePick, matchResult, showHousePick 
             </div>
         </div>
         <div>
-            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-24'>HOUSE
+            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-12 sm:mb-24'>HOUSE
                 PICKED</h1>
-            <div className={`${showHousePick ? 'scale-150' : 'h-44 w-44 bg-black bg-opacity-25 rounded-full'}`}>
-                {showHousePick ? housePick : ''}
+
+
+            <div>{showHousePick ?
+                <div className='scale-110'>
+                    {housePick}
+                </div> :
+                <div className='grid place-items-center'>
+
+                    <div
+                        className={`${showEmptyDiv ? ' h-44 w-44' : 'w-0 h-0'} rounded-full bg-black bg-opacity-25 mx-auto transition-all duration-400`}></div>
+                </div>
+            }
+
             </div>
+
         </div>
     </div>
 }
