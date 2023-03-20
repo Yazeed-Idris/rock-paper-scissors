@@ -1,8 +1,11 @@
 export const MatchContainer = ({userPick, housePick, matchResult}) => {
-    return <div className={`flex justify-between items-center`}>
+    return <div className={`flex justify-around items-center`}>
         <div>
-            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-12'>YOU PICKED</h1>
-            {userPick}
+            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-24'>YOU PICKED</h1>
+            <div className='scale-150'>
+
+                {userPick}
+            </div>
         </div>
         <div>
             {matchResult === 1 ?
@@ -20,9 +23,12 @@ export const MatchContainer = ({userPick, housePick, matchResult}) => {
             </button>
         </div>
         <div>
-            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-12'>HOUSE
+            <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-24'>HOUSE
                 PICKED</h1>
-            {housePick}
+            <div className={'scale-150'}>
+
+                {housePick}
+            </div>
         </div>
     </div>
 }
