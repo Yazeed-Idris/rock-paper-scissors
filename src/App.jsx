@@ -43,6 +43,7 @@ function App() {
     function handlePlayAgain() {
         setMoveClicked(false)
         setPlayerMove(null)
+        setHouseMove(null)
     }
 
     return (
