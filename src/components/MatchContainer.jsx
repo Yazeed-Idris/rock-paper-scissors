@@ -60,7 +60,7 @@ export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgai
                     <div className='grid place-items-center'>
 
                         <div
-                            className={`${showEmptyDiv ? ' h-44 w-44' : 'w-0 h-0'} rounded-full bg-black bg-opacity-25 mx-auto transition-all duration-400`}></div>
+                            className={`${showEmptyDiv ? ' h-32 w-32 sm:w-44 sm:h-44' : 'w-0 h-0'} rounded-full bg-black bg-opacity-25 mx-auto transition-all duration-400`}></div>
                     </div>
                 }
 
