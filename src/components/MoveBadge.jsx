@@ -22,7 +22,7 @@ export const MoveBadge = ({move, cursor}) => {
                         <div className='bg-white w-fit rounded-full'>
                             <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                                 <div
-                                    className='bg-white rounded-full flex items-center justify-center w-22 h-20 sm:w-26 sm:h-24 opacity-100'>
+                                    className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                     <img className='object-contain sm:w-20 sm:h-16'
                                          src='/src/assets/images/icon-paper.svg'
                                          alt='paper badge'/>
@@ -42,7 +42,7 @@ export const MoveBadge = ({move, cursor}) => {
                     <div className='bg-white w-fit rounded-full'>
                         <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                             <div
-                                className='bg-white rounded-full grid place-items-center w-22 h-20 sm:w-26 sm:h-24 opacity-100'>
+                                className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-20 sm:h-16' src='/src/assets/images/icon-rock.svg'
                                      alt='rock badge'/>
                             </div>
@@ -61,7 +61,7 @@ export const MoveBadge = ({move, cursor}) => {
                     <div className='bg-white w-fit rounded-full'>
                         <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                             <div
-                                className='bg-white rounded-full grid place-items-center w-22 h-20 sm:w-26 sm:h-24 opacity-100'>
+                                className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
                                      src='/src/assets/images/icon-scissors.svg'
                                      alt='scissors badge'/>
@@ -80,7 +80,7 @@ export const MoveBadge = ({move, cursor}) => {
                     <div className='bg-white w-fit rounded-full'>
                         <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                             <div
-                                className='bg-white rounded-full grid place-items-center w-22 h-20 sm:w-26 sm:h-24 opacity-100'>
+                                className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
                                      src='/src/assets/images/icon-lizard.svg'
                                      alt='lizard badge'/>
@@ -99,7 +99,7 @@ export const MoveBadge = ({move, cursor}) => {
                     <div className='bg-white w-fit rounded-full'>
                         <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                             <div
-                                className='bg-white rounded-full grid place-items-center w-22 h-20 sm:w-26 sm:h-24 opacity-100'>
+                                className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
                                      src='/src/assets/images/icon-spock.svg'
                                      alt='spock badge'/>
