@@ -5,10 +5,10 @@ export const MovesContainer = ({moveClickedHandler}) => {
 
     const [clicked, setClicked] = useState(false);
 
-    function handleClick() {
+    function handleClick(move) {
         setClicked(true)
         setTimeout(() => {
-            moveClickedHandler()
+            moveClickedHandler(move)
         }, 300)
     }
 
@@ -17,15 +17,15 @@ export const MovesContainer = ({moveClickedHandler}) => {
         <div className="grid grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0">
 
             <div className='flex col-start-1 col-end-4 justify-around sm:justify-between w-full'>
-                <div onClick={handleClick}>
+                <div onClick={() => handleClick('paper')}>
                     <MoveBadge move={"paper"}/>
                 </div>
-                <div onClick={handleClick}>
+                <div onClick={() => handleClick('scissors')}>
                     <MoveBadge move={"scissors"}/>
                 </div>
             </div>
 
-            <div onClick={handleClick} className="col-start-2 row-start-2 mb-4">
+            <div onClick={() => handleClick('rock')} className="col-start-2 row-start-2 mb-4">
                 <MoveBadge move={"rock"}/>
             </div>
         </div>

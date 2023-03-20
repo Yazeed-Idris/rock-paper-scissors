@@ -10,9 +10,14 @@ function App() {
 
     const [score, setScore] = useState(0);
     const [moveClicked, setMoveClicked] = useState(false);
+    const [playerMove, setPlayerMove] = useState(null)
+    const [houseMove, setHouseMove] = useState(null)
 
-    function moveClickedHandler() {
+    function moveClickedHandler(move) {
         setMoveClicked(true);
+        setPlayerMove(move);
+        const randomNum = Math.floor(Math.random() * 3);
+        randomNum === 0 ? setHouseMove('paper') : randomNum === 1 ? setHouseMove('rock') : setHouseMove('scissors');
     }
 
     return (
@@ -24,7 +29,8 @@ function App() {
                 {!moveClicked ? <MovesContainer moveClickedHandler={moveClickedHandler}/> : ''}
                 <div
                     className={`${!moveClicked ? 'translate-x-[100vw]  invisible h-0 w-0' : ''} transition-all duration-300 container w-full`}>
-                    <MatchContainer userPick={<MoveBadge move={'paper'}/>} housePick={<MoveBadge move={'scissors'}/>}
+                    <MatchContainer userPick={<MoveBadge cursor={'default'} move={playerMove}/>}
+                                    housePick={<MoveBadge cursor={'default'} move={houseMove}/>}
                                     matchResult={1}/>
                 </div>
             </div>
