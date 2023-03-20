@@ -51,15 +51,21 @@ function App() {
                 <div className='mt-12 w-full mb-20 grid place-items-center'>
                     <Header score={score}/>
                 </div>
-                {!moveClicked ? <MovesContainer moveClickedHandler={moveClickedHandler}/> : ''}
-                <div
-                    className={`${!moveClicked ? 'translate-x-[100vw]  invisible h-0 w-0' : ''} transition-all duration-300 container w-full`}>
-                    <MatchContainer userPick={playerMove}
-                                    housePick={houseMove}
-                                    setScore={setScore}
-                                    matchResult={matchResult}
-                                    handlePlayAgain={handlePlayAgain}
-                    />
+                <div className='flex w-full'>
+                    <div
+                        className={`${!moveClicked ? 'translate-x-0' : 'translate-x-[-100vw] '} transition-all duration-300`}>
+
+                        {!moveClicked ? <MovesContainer moveClickedHandler={moveClickedHandler}/> : ''}
+                    </div>
+                    <div
+                        className={`${!moveClicked ? 'translate-x-[100vw]  invisible h-0 w-0' : 'translate-x-[0]'} w-full transition-transform duration-700 container w-full`}>
+                        <MatchContainer userPick={playerMove}
+                                        housePick={houseMove}
+                                        setScore={setScore}
+                                        matchResult={matchResult}
+                                        handlePlayAgain={handlePlayAgain}
+                        />
+                    </div>
                 </div>
             </div>
             <div className='mb-12 w-full lg:mr-24'>
