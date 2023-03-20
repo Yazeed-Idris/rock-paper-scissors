@@ -3,7 +3,6 @@ import {useState} from "react";
 import {MovesContainer} from "./components/MovesContainer.jsx";
 import {RulesButton} from "./components/RulesButton.jsx";
 import {MatchContainer} from "./components/MatchContainer";
-import {MoveBadge} from "./components/MoveBadge";
 
 
 function App() {
@@ -12,12 +11,38 @@ function App() {
     const [moveClicked, setMoveClicked] = useState(false);
     const [playerMove, setPlayerMove] = useState(null)
     const [houseMove, setHouseMove] = useState(null)
+    const [matchResult, setMatchResult] = useState(0)
 
     function moveClickedHandler(move) {
         setMoveClicked(true);
         setPlayerMove(move);
         const randomNum = Math.floor(Math.random() * 3);
-        randomNum === 0 ? setHouseMove('paper') : randomNum === 1 ? setHouseMove('rock') : setHouseMove('scissors');
+        let randomHouseMove = randomNum === 0 ? 'paper' : randomNum === 1 ? 'rock' : 'scissors'
+        setHouseMove(randomHouseMove);
+        let point = calculateResult(move, randomHouseMove);
+        if (score + point >= 0) {
+
+            setScore(score + point);
+        }
+
+    }
+
+    function calculateResult(userPick, housePick) {
+        if (userPick === housePick) {
+            setMatchResult(0);
+            return 0;
+        }
+        if ((userPick === 'paper' && housePick === 'rock') || (userPick === 'rock' && housePick === 'scissors') || (userPick === 'scissors' && housePick === 'paper')) {
+            setMatchResult(1);
+            return 1;
+        }
+        setMatchResult(-1);
+        return -1;
+    }
+
+    function handlePlayAgain() {
+        setMoveClicked(false)
+        setPlayerMove(null)
     }
 
     return (
@@ -29,9 +54,12 @@ function App() {
                 {!moveClicked ? <MovesContainer moveClickedHandler={moveClickedHandler}/> : ''}
                 <div
                     className={`${!moveClicked ? 'translate-x-[100vw]  invisible h-0 w-0' : ''} transition-all duration-300 container w-full`}>
-                    <MatchContainer userPick={<MoveBadge cursor={'default'} move={playerMove}/>}
-                                    housePick={<MoveBadge cursor={'default'} move={houseMove}/>}
-                                    matchResult={1}/>
+                    <MatchContainer userPick={playerMove}
+                                    housePick={houseMove}
+                                    setScore={setScore}
+                                    matchResult={matchResult}
+                                    handlePlayAgain={handlePlayAgain}
+                    />
                 </div>
             </div>
             <div className='mb-12 w-full lg:mr-24'>
