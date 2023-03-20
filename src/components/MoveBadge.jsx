@@ -1,14 +1,9 @@
-export const MoveBadge = ({move, setMoveNumber}) => {
+export const MoveBadge = ({move}) => {
 
-    function handleClick(moveNumber) {
-        setMoveNumber(moveNumber)
-    }
 
     if (move === 'paper') {
         return (
-            <div onClick={() => {
-                handleClick(1)
-            }} className='bg-Paper-Gradient-from w-fit rounded-full'>
+            <div className='bg-Paper-Gradient-from w-fit rounded-full'>
                 <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                     <div
                         className='bg-gradient-to-b from-Paper-Gradient-from to-Paper-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
@@ -27,9 +22,7 @@ export const MoveBadge = ({move, setMoveNumber}) => {
             </div>
         )
     } else if (move === 'rock') {
-        return <div onClick={() => {
-            handleClick(2)
-        }} className='bg-Rock-Gradient-from w-fit rounded-full'>
+        return <div className='bg-Rock-Gradient-from w-fit rounded-full'>
             <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                 <div
                     className='bg-gradient-to-b from-Rock-Gradient-from to-Rock-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
@@ -47,9 +40,7 @@ export const MoveBadge = ({move, setMoveNumber}) => {
         </div>
 
     } else {
-        return <div onClick={() => {
-            handleClick(3)
-        }} className='bg-Scissors-Gradient-from w-fit rounded-full'>
+        return <div className='bg-Scissors-Gradient-from w-fit rounded-full'>
             <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                 <div
                     className='bg-gradient-to-b from-Scissors-Gradient-from to-Scissors-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
