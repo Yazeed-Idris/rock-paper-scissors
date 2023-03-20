@@ -49,27 +49,27 @@ function App() {
     }
 
     return (
-        <div className='App flex flex-col justify-between h-full items-center overflow-hidden'>
+        <div className='App flex flex-col justify-between h-full items-center overflowhidden '>
             <div className="flex flex-col items-center container">
                 <div className='mt-12 w-full mb-20 grid place-items-center'>
                     <Header score={score}/>
                 </div>
-                <div className='flex w-full justify-center'>
+                <div className='w-full'>
                     <div
-                        className={`${!moveClicked ? 'translate-x-0' : 'translate-x-[-100vw] '} transition-all duration-300`}>
+                        className={`${!moveClicked ? 'translate-x-0 grow w-full' : 'translate-x-[-100vw] w-0'} w-full transition-all duration-300`}>
 
                         {!moveClicked ? <MovesContainer moveClickedHandler={moveClickedHandler}/> : ''}
                     </div>
                     <div
-                        className={`${!moveClicked ? 'translate-x-[100vw]  invisible h-0 w-0' : 'translate-x-[0]'} w-full transition-transform duration-700 container w-full`}>
-                        <MatchContainer userPick={playerMove}
-                                        housePick={houseMove}
-                                        setScore={setScore}
-                                        matchResult={matchResult}
-                                        handlePlayAgain={handlePlayAgain}
-                                        on={on}
-                                        setOn={setOn}
-                        />
+                        className={`${!moveClicked ? 'translate-x-[100vw] w-0' : 'mt-0 grow w-full'} transition-transform duration-700 container w-full`}>
+                        {moveClicked ? <MatchContainer userPick={playerMove}
+                                                       housePick={houseMove}
+                                                       setScore={setScore}
+                                                       matchResult={matchResult}
+                                                       handlePlayAgain={handlePlayAgain}
+                                                       on={on}
+                                                       setOn={setOn}
+                        /> : ''}
                     </div>
                 </div>
             </div>
