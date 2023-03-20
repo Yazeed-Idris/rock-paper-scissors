@@ -54,7 +54,8 @@ export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgai
             <div>
                 <h1 className='text-center text-white text-2xl font-Barlow-Semi-Condensed font-[700] mb-12 sm:mb-24'>YOU
                     PICKED</h1>
-                <div className={`scale-110 rounded-full ${matchResult === 1 && showHousePick ? 'shadow-circle' : ''}`}>
+                <div
+                    className={`scale-110 rounded-full ${matchResult === 1 && showHousePick ? 'shadow-circle z-10' : 'z-20'} relative`}>
                     {<MoveBadge cursor={'default'} move={userPick}/>}
                 </div>
             </div>
@@ -88,7 +89,7 @@ export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgai
 
                 <div>{showHousePick ?
                     <div
-                        className={`scale-110 rounded-full ${matchResult === -1 && showHousePick ? 'shadow-circle' : ''}`}
+                        className={`scale-110 rounded-full ${matchResult === -1 && showHousePick ? 'shadow-circle z-10' : 'z-20'} relative`}
                         ref={housePickRef}>
                         {<MoveBadge move={housePick} cursor={'default'}/>}
                     </div> :
