@@ -3,7 +3,7 @@ export const MoveBadge = ({move}) => {
 
     if (move === 'paper') {
         return (
-            <div className='bg-Paper-Gradient-from w-fit rounded-full'>
+            <div className='bg-Paper-Gradient-from w-fit rounded-full shadow-2xl'>
                 <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                     <div
                         className='bg-gradient-to-b from-Paper-Gradient-from to-Paper-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
@@ -22,7 +22,7 @@ export const MoveBadge = ({move}) => {
             </div>
         )
     } else if (move === 'rock') {
-        return <div className='bg-Rock-Gradient-from w-fit rounded-full'>
+        return <div className='bg-Rock-Gradient-from w-fit rounded-full shadow-2xl'>
             <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                 <div
                     className='bg-gradient-to-b from-Rock-Gradient-from to-Rock-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
@@ -40,7 +40,7 @@ export const MoveBadge = ({move}) => {
         </div>
 
     } else {
-        return <div className='bg-Scissors-Gradient-from w-fit rounded-full'>
+        return <div className='bg-Scissors-Gradient-from w-fit rounded-full shadow-2xl'>
             <div className='bg-black bg-opacity-30 w-fit rounded-full pb-2'>
                 <div
                     className='bg-gradient-to-b from-Scissors-Gradient-from to-Scissors-Gradient-to col-span-1 row-span-1 rounded-full p-4 px-5 sm:p-5 sm:px-6 w-fit'>
