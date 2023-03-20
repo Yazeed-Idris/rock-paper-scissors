@@ -5,11 +5,12 @@ export const MovesContainer = () => {
 
     const [moveNumber, setMoveNumber] = useState(4);
 
-    return <div className="container w-fit h-fit p-20 relative ">
-        <div className="grid grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0">
+    return <div className=" w-full h-fit p-20 relative ">
+        <div
+            className={`${moveNumber !== 4 ? 'flex justify-between' : 'grid'} grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0`}>
 
             <div
-                className={`flex col-start-1 col-end-4 justify-around sm:justify-between w-full ${moveNumber !== 4 ? 'relative' : ''}`}>
+                className={`flex col-start-1 col-end-4 justify-around sm:justify-between w-full ${moveNumber !== 4 ? '' : ''}`}>
                 <div className={`${moveNumber !== 1 ? 'invisible' : ''}`}>
                     <MoveBadge setMoveNumber={setMoveNumber} move={"paper"}/>
                 </div>
@@ -21,6 +22,9 @@ export const MovesContainer = () => {
                     : <div></div>}
             </div>
 
+            <div className={`${moveNumber !== 4 ? 'scale-100' : 'scale-0'} transition-all duration-700`}>
+                <h1 className='font-Barlow-Semi-Condensed font-[700] text-white text-4xl'>Hello World!</h1>
+            </div>
             <div className="col-start-2 row-start-2 mb-4">
                 {moveNumber === 4 || moveNumber === 2 ?
                     <MoveBadge setMoveNumber={setMoveNumber} move={"rock"}/>
