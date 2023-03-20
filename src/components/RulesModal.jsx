@@ -10,8 +10,8 @@ export const RulesModal = ({setShowModal}) => {
             <div className='flex justify-center sm:justify-between w-full mb-12'>
                 <h1
                     className='text-center font-Barlow-Semi-Condensed font-[700] text-4xl text-Dark'>RULES</h1>
-                <img onClick={handleClick} src="/public/images/icon-x-button.svg"
-                     className='hidden sm:inline object-contain'
+                <img onClick={handleClick} src="/images/icon-x-button.svg"
+                     className='hidden sm:inline object-contain cursor-pointer'
                      alt="close button"/>
             </div>
             <img src="/images/image-rules-bonus.svg"
