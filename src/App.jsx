@@ -49,7 +49,7 @@ function App() {
     }
 
     return (
-        <div className='App flex flex-col justify-between h-full items-center overflowhidden '>
+        <div className='App flex flex-col justify-between h-full items-center overflow-hidden '>
             <div className="flex flex-col items-center container">
                 <div className='mt-12 sm:w-full mb-20 grid place-items-center'>
                     <Header score={score}/>
