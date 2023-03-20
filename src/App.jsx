@@ -12,8 +12,10 @@ function App() {
     const [playerMove, setPlayerMove] = useState(null)
     const [houseMove, setHouseMove] = useState(null)
     const [matchResult, setMatchResult] = useState(0)
+    const [on, setOn] = useState(1)
 
     function moveClickedHandler(move) {
+        setOn(1)
         setMoveClicked(true);
         setPlayerMove(move);
         const randomNum = Math.floor(Math.random() * 3);
@@ -52,7 +54,7 @@ function App() {
                 <div className='mt-12 w-full mb-20 grid place-items-center'>
                     <Header score={score}/>
                 </div>
-                <div className='flex w-full'>
+                <div className='flex w-full justify-center'>
                     <div
                         className={`${!moveClicked ? 'translate-x-0' : 'translate-x-[-100vw] '} transition-all duration-300`}>
 
@@ -65,6 +67,8 @@ function App() {
                                         setScore={setScore}
                                         matchResult={matchResult}
                                         handlePlayAgain={handlePlayAgain}
+                                        on={on}
+                                        setOn={setOn}
                         />
                     </div>
                 </div>
