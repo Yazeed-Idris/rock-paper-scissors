@@ -7,7 +7,7 @@ export const MovesContainer = () => {
 
     return <div className=" w-full h-fit p-20 relative ">
         <div
-            className={`${moveNumber !== 4 ? 'flex justify-between' : 'grid'} grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0`}>
+            className={`${moveNumber !== 4 ? 'flex justify-around' : 'grid'} grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0`}>
 
             <div
                 className={`flex col-start-1 col-end-4 justify-around sm:justify-between w-full ${moveNumber !== 4 ? '' : ''}`}>
@@ -31,7 +31,7 @@ export const MovesContainer = () => {
                     : <div></div>}
             </div>
         </div>
-        <img src="/src/assets/images/bg-triangle.svg" className={`${moveNumber !== 4 ? 'invisible' : ''}`}
+        <img src="/src/assets/images/bg-triangle.svg" className={`mx-auto ${moveNumber !== 4 ? 'invisible' : ''}`}
              alt="triangle background"/>
 
     </div>;
