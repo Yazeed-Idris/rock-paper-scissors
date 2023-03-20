@@ -9,7 +9,6 @@ export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgai
     const housePickRef = useRef(null);
     const emptyDivInViewPort = useIsInViewport(emptyDivRef)
     useEffect(() => {
-        console.log('on:', on)
         if (emptyDivInViewPort && on === 1) {
             setTimeout(() => {
                 setShowEmptyDiv(false)
