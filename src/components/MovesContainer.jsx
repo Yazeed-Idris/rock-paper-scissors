@@ -34,6 +34,6 @@ export const MovesContainer = ({moveClickedHandler}) => {
 
 
         </div>
-        <img src="/src/assets/images/bg-pentagon.svg" className="" alt="pentagon background"/>
+        <img src="/public/images/bg-pentagon.svg" className="" alt="pentagon background"/>
     </div>;
 }

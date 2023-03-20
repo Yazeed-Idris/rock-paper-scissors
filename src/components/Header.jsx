@@ -8,6 +8,8 @@ export const Header = ({score}) => {
                 ROCK
                 <br/>PAPER
                 <br/>SCISSORS
+                <br/>LIZARD
+                <br/>SPOCK
             </h1>
         </div>
         <Score score={score}/>

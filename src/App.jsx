@@ -57,7 +57,7 @@ function App() {
     return (
         <div className='App flex flex-col justify-between h-full items-center overflow-hidden '>
             <div className="flex flex-col items-center container">
-                <div className='mt-12 sm:w-full mb-20 grid place-items-center'>
+                <div className='mt-6 sm:w-full mb-10 grid place-items-center'>
                     <Header score={score}/>
                 </div>
                 <div className='w-full'>
@@ -79,7 +79,7 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div className='mb-12 w-full lg:mr-24'>
+            <div className='mb-6 w-full lg:mr-24'>
                 <div className='w-full flex justify-center lg:justify-end '>
                     <RulesButton/>
                 </div>
