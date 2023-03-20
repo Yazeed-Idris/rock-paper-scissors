@@ -18,8 +18,8 @@ function App() {
         setOn(1)
         setMoveClicked(true);
         setPlayerMove(move);
-        const randomNum = Math.floor(Math.random() * 3);
-        let randomHouseMove = randomNum === 0 ? 'paper' : randomNum === 1 ? 'rock' : 'scissors'
+        const randomNum = Math.floor(Math.random() * 5);
+        let randomHouseMove = randomNum === 0 ? 'paper' : randomNum === 1 ? 'rock' : randomNum === 2 ? 'scissors' : randomNum === 3 ? 'lizard' : 'spock'
         setHouseMove(randomHouseMove);
         let point = calculateResult(move, randomHouseMove);
         if (score + point >= 0) {
@@ -34,7 +34,13 @@ function App() {
             setMatchResult(0);
             return 0;
         }
-        if ((userPick === 'paper' && housePick === 'rock') || (userPick === 'rock' && housePick === 'scissors') || (userPick === 'scissors' && housePick === 'paper')) {
+        if (
+            (userPick === 'paper' && (housePick === 'rock' || housePick === 'spock'))
+            || (userPick === 'rock' && (housePick === 'scissors' || housePick === 'lizard'))
+            || (userPick === 'scissors' && (housePick === 'paper' || housePick === 'lizard'))
+            || (userPick === 'spock' && (housePick === 'scissors' || housePick === 'rock'))
+            || (userPick === 'lizard' && (housePick === 'spock' || housePick === 'paper'))
+        ) {
             setMatchResult(1);
             return 1;
         }
@@ -49,7 +55,7 @@ function App() {
     }
 
     return (
-        <div className='App flex flex-col justify-between h-full items-center overflowhidden '>
+        <div className='App flex flex-col justify-between h-full items-center overflow-hidden '>
             <div className="flex flex-col items-center container">
                 <div className='mt-12 sm:w-full mb-20 grid place-items-center'>
                     <Header score={score}/>

@@ -14,7 +14,7 @@ export const RulesModal = ({setShowModal}) => {
                      className='hidden sm:inline object-contain'
                      alt="close button"/>
             </div>
-            <img src="/src/assets/images/image-rules.svg"
+            <img src="/src/assets/images/image-rules-bonus.svg"
                  alt="Rock beats Scissors, Scissors beats Paper, and Paper beats Rock"
                  className='mx-auto object-contain mx-10'/>
             <img onClick={handleClick} className='mt-20 sm:hidden'
