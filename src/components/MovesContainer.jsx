@@ -13,7 +13,7 @@ export const MovesContainer = ({moveClickedHandler}) => {
     }
 
     return <div
-        className={`container w-fit h-fit p-20 ${clicked ? '-translate-x-[100vw] transition-all duration-300' : ''} relative`}>
+        className={`container mx-auto w-fit h-fit p-20 ${clicked ? '-translate-x-[100vw] transition-all duration-300' : ''} relative`}>
         <div className="grid grid-cols-3 grid-rows-2 place-items-center w-full h-full absolute top-0 left-0">
 
             <div className='flex col-start-1 col-end-4 justify-around sm:justify-between w-full'>
