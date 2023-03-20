@@ -1,20 +1,35 @@
 import {useState} from "react";
 import {MoveBadge} from "./MoveBadge";
 
+function useForceUpdate() {
+    const [value, setValue] = useState(0);
+    return () => setValue(value => value + 1)
+}
+
 export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgain}) => {
 
     const [showHousePick, setShowHousePick] = useState(false)
     const [showEmptyDiv, setShowEmptyDiv] = useState(true)
+    const forceUpdate = useForceUpdate();
 
     if (housePick) {
         setTimeout(() => {
-            setShowEmptyDiv(false)
-        }, 2200)
-        setTimeout(() => {
-            setShowHousePick(true)
-        }, 2235)
+            setTimeout(() => {
+                setShowEmptyDiv(false)
+            }, 2000)
+            setTimeout(() => {
+                setShowHousePick(true)
+            }, 2035)
+        }, 100)
+
     }
 
+    function handleClick() {
+        setShowEmptyDiv(true);
+        setShowHousePick(false);
+        handlePlayAgain();
+        forceUpdate();
+    }
 
     return <div>
 
@@ -85,7 +100,7 @@ export const MatchContainer = ({userPick, housePick, matchResult, handlePlayAgai
                         :
                         <h1 className='text-center text-white text-4xl font-Barlow-Semi-Condensed font-[700] tracking-widest'>PICKING...</h1>
                 }
-                <button onClick={handlePlayAgain}
+                <button onClick={handleClick}
                         className='w-full py-3 bg-white rounded-lg text-Dark transition-all duration-100 shadow-lg mt-3 px-16 font-Barlow-Semi-Condensed font-[600] tracking-widest hover:text-Rock-Gradient-to'>PLAY
                     AGAIN
                 </button>
