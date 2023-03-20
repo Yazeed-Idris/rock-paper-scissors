@@ -11,7 +11,7 @@ export const RulesModal = ({setShowModal}) => {
                 <h1
                     className='text-center font-Barlow-Semi-Condensed font-[700] text-4xl text-Dark'>RULES</h1>
                 <img onClick={handleClick} src="/images/icon-x-button.svg"
-                     className='hidden sm:inline object-contain'
+                     className='hidden sm:inline object-contain cursor-pointer'
                      alt="close button"/>
             </div>
             <img src="/images/image-rules.svg"
