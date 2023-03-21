@@ -24,7 +24,7 @@ export const MoveBadge = ({move, cursor}) => {
                                 <div
                                     className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                     <img className='object-contain sm:w-20 sm:h-16'
-                                         src='/images/icon-paper.svg'
+                                         src='./images/icon-paper.svg'
                                          alt='paper badge'/>
                                 </div>
                             </div>
@@ -43,7 +43,8 @@ export const MoveBadge = ({move, cursor}) => {
                         <div className='bg-black rounded-full pt-2 bg-opacity-25'>
                             <div
                                 className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
-                                <img className='object-contain sm:w-20 sm:h-16' src='/images/icon-rock.svg'
+                                <img className='object-contain sm:w-20 sm:h-16'
+                                     src='./images/icon-rock.svg'
                                      alt='rock badge'/>
                             </div>
                         </div>
@@ -63,7 +64,7 @@ export const MoveBadge = ({move, cursor}) => {
                             <div
                                 className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
-                                     src='/images/icon-scissors.svg'
+                                     src='./images/icon-scissors.svg'
                                      alt='scissors badge'/>
                             </div>
                         </div>
@@ -82,7 +83,7 @@ export const MoveBadge = ({move, cursor}) => {
                             <div
                                 className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
-                                     src='/images/icon-lizard.svg'
+                                     src='./images/icon-lizard.svg'
                                      alt='lizard badge'/>
                             </div>
                         </div>
@@ -101,7 +102,7 @@ export const MoveBadge = ({move, cursor}) => {
                             <div
                                 className={`bg-white rounded-full flex items-center justify-center ${!cursor ? 'w-22 h-20' : 'w-26 h-24'} sm:w-26 sm:h-24 opacity-100`}>
                                 <img className='object-contain sm:w-24 sm:h-20'
-                                     src='/images/icon-spock.svg'
+                                     src='./images/icon-spock.svg'
                                      alt='spock badge'/>
                             </div>
                         </div>
