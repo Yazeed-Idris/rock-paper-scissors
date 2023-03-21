@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
         colors: {
+            "White-Shadow": "#bbc0d5",
             "Dark": "hsl(229, 25%, 31%)",
             "Score": "hsl(229, 64%, 46%)",
             "Score-Number": "#565468",
@@ -22,6 +23,10 @@ module.exports = {
         },
         fontFamily: {
             "Barlow-Semi-Condensed": ['"Barlow Semi Condensed"', 'sans-serif']
+        },
+        spacing: {
+            '34': '8.5rem',
+            '26': '6.5rem'
         }
     },
   },
