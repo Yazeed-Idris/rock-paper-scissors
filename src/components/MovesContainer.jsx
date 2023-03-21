@@ -29,6 +29,6 @@ export const MovesContainer = ({moveClickedHandler}) => {
                 <MoveBadge move={"rock"}/>
             </div>
         </div>
-        <img src="/images/bg-triangle.svg" className="" alt="triangle background"/>
+        <img src="./images/bg-triangle.svg" className="" alt="triangle background"/>
     </div>;
 }
